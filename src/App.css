@@ -1,0 +1,74 @@
+body {
+  background: #0f0c29;
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+}
+
+.hero-section {
+  height: 100vh;
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+  padding: 150px 0;
+}
+
+.hero-image {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  
+  
+}
+
+.about-section,
+.skills-section,
+.portfolio-section,
+.contact-section {
+  padding: 80px 0;
+}
+
+.projects {
+  border: none !important;
+  background-color: #414868 !important;
+  color: #c0caf5 !important;
+}
+.projects:hover {
+  background-color: #343a5e !important;
+}
+
+.projects-button {
+  border: none !important;
+  background-color: #414868 !important;
+  color: #c0caf5 !important;
+}
+.projects-button:hover {
+  background-color: #343a5e !important;
+}
+.footer-section {
+  background-color: #111;
+}
+
+.titles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  color: white;
+  font-size: 36px;
+}
+
+.skill-card {
+  background-color: #414868 !important;
+  color: #c0caf5 !important;
+}
+.skill-card:hover {
+  background-color: #343a5e !important;
+}
+
+@media (max-width: 1024px) {
+  .hero-image {
+    width: 200px !important;
+    height: 200px !important;
+
+  }
+}
