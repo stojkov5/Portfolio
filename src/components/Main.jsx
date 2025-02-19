@@ -36,7 +36,7 @@ const Main = () => {
           </Col>
           <Col md={6} className="text-center">
             <Image
-              src="../public/Aleksandar-S.png"
+              src="https://imgur.com/NaBy44M.jpg"
               alt="Aleksandar Stojkov"
               roundedCircle
               className="hero-image"
