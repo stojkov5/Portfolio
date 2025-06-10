@@ -31,13 +31,25 @@ const projects = [
     category: "React",
     title: "Padel Federation of Macedonia",
     gitproject: "https://github.com/stojkov5/padel-federation-project",
-    demo: "https://padelfederation-macedonia.netlify.app/",
+    demo: "https://padelfederation.mk",
   },
   {
     category: "React",
     title: "Task Tracker",
     gitproject: "https://github.com/stojkov5/progress-tracker",
     demo: "https://progresstracker05.netlify.app/",
+  },
+  {
+    category: "React",
+    title: "FinRule",
+    gitproject: "https://github.com/stojkov5/FinRule",
+    demo: "https://finrule.io",
+  },
+  {
+    category: "React",
+    title: "FankoskArt",
+    gitproject: "https://github.com/stojkov5/FankoskArt",
+    demo: "https://fankoskart.shop",
   },
 ];
 
