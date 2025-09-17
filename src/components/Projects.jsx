@@ -51,6 +51,12 @@ const projects = [
     gitproject: "https://github.com/stojkov5/FankoskArt",
     demo: "https://fankoskart.shop",
   },
+  {
+    category: "React",
+    title: "AquaPro",
+    gitproject: "https://github.com/stojkov5/aqua-pro",
+    demo: "https://aquaproswim.com",
+  },
 ];
 
 const Projects = () => {
