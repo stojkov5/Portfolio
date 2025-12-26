@@ -57,6 +57,12 @@ const projects = [
     gitproject: "https://github.com/stojkov5/aqua-pro",
     demo: "https://aquaproswim.com",
   },
+  {
+    category: "React",
+    title: "Cowork Konnectivity",
+    gitproject: "https://github.com/stojkov5/ConnectivityCowork",
+    demo: "https://coworkonnectivity.com",
+  },
 ];
 
 const Projects = () => {
