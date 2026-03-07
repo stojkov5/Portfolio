@@ -11,6 +11,7 @@ const Contact = () => {
             <ul>
               <li>Email: a.stojkov5@gmail.com</li>
               <li>Facebook: Stojkov Aleksandar</li>
+              <li>LinkedIn: Aleksandar Stojkov</li>
               {/* Add other social handles */}
             </ul>
           </Col>
