@@ -1,14 +1,36 @@
-import React from 'react';
-import { Container } from 'react-bootstrap';
+import { motion } from 'framer-motion';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
-const Footer = () => {
+const socials = [
+  { icon: <FaGithub />,   href: 'https://github.com/stojkov5',                              label: 'GitHub' },
+  { icon: <FaLinkedin />, href: 'https://www.linkedin.com/in/aleksandar-stojkov-b37ab0304/', label: 'LinkedIn' },
+  { icon: <FaEnvelope />, href: 'mailto:a.stojkov5@gmail.com',                              label: 'Email' },
+];
+
+export default function Footer() {
   return (
-    <footer className="footer-section bg-dark text-light text-center py-3">
-      <Container>
-        <p>&copy; 2024-Aleksandar Stojkov</p>
-      </Container>
+    <footer className="footer">
+      <div className="footer-inner">
+        <p className="footer-text">
+          &copy; 2024 <span>Aleksandar Stojkov</span> — Built with React &amp; Three.js
+        </p>
+        <div className="footer-socials">
+          {socials.map(({ icon, href, label }) => (
+            <motion.a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-link"
+              aria-label={label}
+              whileHover={{ scale: 1.15, y: -3 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              {icon}
+            </motion.a>
+          ))}
+        </div>
+      </div>
     </footer>
   );
-};
-
-export default Footer;
+}
