@@ -1,5 +1,6 @@
 import { useScroll, useSpring, motion } from 'framer-motion';
 import CustomCursor from './components/CustomCursor';
+import CrowsBackground from './components/CrowsBackground';
 import Header from './components/Header';
 import Main from './components/Main';
 import Skills from './components/Skills';
@@ -9,15 +10,12 @@ import Footer from './components/Footer';
 
 function App() {
   const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
+  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
   return (
     <div className="app-container">
       <CustomCursor />
+      <CrowsBackground />
       <motion.div className="scroll-progress" style={{ scaleX }} />
       <Header />
       <Main />

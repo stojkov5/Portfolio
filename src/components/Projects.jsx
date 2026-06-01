@@ -1,14 +1,10 @@
 import { useState, useRef } from 'react';
 import {
-  motion,
-  AnimatePresence,
-  useInView,
-  useMotionValue,
-  useTransform,
-  useSpring,
+  motion, AnimatePresence, useInView,
+  useMotionValue, useTransform, useSpring,
 } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaReact, FaCode } from 'react-icons/fa';
-import { SiJavascript } from 'react-icons/si';
+import { SiJavascript, SiNextdotjs } from 'react-icons/si';
 
 const projects = [
   { category: 'HTML, CSS',  title: 'ZFK-Borec',                    gitproject: 'https://github.com/stojkov5/First-Project-ZFK-Borec' },
@@ -21,14 +17,15 @@ const projects = [
   { category: 'React',      title: 'FankoskArt',                    gitproject: 'https://github.com/stojkov5/FankoskArt', demo: 'https://fankoskart.shop' },
   { category: 'React',      title: 'AquaPro',                       gitproject: 'https://github.com/stojkov5/aqua-pro', demo: 'https://aquaproswim.com' },
   { category: 'React',      title: 'Cowork Konnectivity',           gitproject: 'https://github.com/stojkov5/ConnectivityCowork', demo: 'https://konnectivity.mk/' },
-  { category: 'NextJS',     title: 'ABGCC',       gitproject: 'https://github.com/stojkov5/abgcc' , demo: 'https://abgcc.org/' },
+  { category: 'NextJS',     title: 'ABGCC',                         gitproject: 'https://github.com/stojkov5/abgcc', demo: 'https://abgcc.org/' },
 ];
 
-const filters = ['All', 'HTML, CSS', 'JavaScript', 'React'];
+const filters = ['All', 'HTML, CSS', 'JavaScript', 'React', 'NextJS'];
 
 const categoryIcon = (cat) => {
-  if (cat === 'React') return <FaReact />;
+  if (cat === 'React')      return <FaReact />;
   if (cat === 'JavaScript') return <SiJavascript />;
+  if (cat === 'NextJS')     return <SiNextdotjs />;
   return <FaCode />;
 };
 
@@ -46,11 +43,7 @@ function TiltCard({ children }) {
     x.set(e.clientX - (rect.left + rect.width / 2));
     y.set(e.clientY - (rect.top + rect.height / 2));
   };
-
-  const onMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
+  const onMouseLeave = () => { x.set(0); y.set(0); };
 
   return (
     <div className="project-card-wrapper" ref={cardRef}>
@@ -67,11 +60,7 @@ function TiltCard({ children }) {
 
 const cardVariants = {
   hidden: { opacity: 0, y: 28 },
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, delay: i * 0.06, ease: [0.25, 0.46, 0.45, 0.94] },
-  }),
+  visible: (i) => ({ opacity: 1, y: 0, transition: { duration: 0.5, delay: i * 0.06, ease: [0.25, 0.46, 0.45, 0.94] } }),
   exit: { opacity: 0, scale: 0.94, transition: { duration: 0.25 } },
 };
 
@@ -80,9 +69,7 @@ export default function Projects() {
   const headerRef = useRef(null);
   const headerInView = useInView(headerRef, { once: true, amount: 0.3 });
 
-  const filtered = filter === 'All'
-    ? projects
-    : projects.filter((p) => p.category === filter);
+  const filtered = filter === 'All' ? projects : projects.filter((p) => p.category === filter);
 
   return (
     <section id="portfolio" className="section-wrapper">
@@ -93,9 +80,10 @@ export default function Projects() {
           animate={headerInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          <p className="section-label">My Work</p>
-          <h2 className="section-title">Projects</h2>
+          <p className="section-label">Completed Missions</p>
+          <h2 className="section-title">Field Operations</h2>
           <div className="glow-line" />
+         
         </motion.div>
 
         <motion.div
@@ -134,24 +122,12 @@ export default function Projects() {
                     <div className="project-icon">{categoryIcon(project.category)}</div>
                     <div className="project-links">
                       {project.gitproject && (
-                        <a
-                          href={project.gitproject}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="project-link"
-                          aria-label="GitHub"
-                        >
+                        <a href={project.gitproject} target="_blank" rel="noopener noreferrer" className="project-link" aria-label="GitHub">
                           <FaGithub />
                         </a>
                       )}
                       {project.demo && (
-                        <a
-                          href={project.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="project-link"
-                          aria-label="Live demo"
-                        >
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer" className="project-link" aria-label="Live demo">
                           <FaExternalLinkAlt />
                         </a>
                       )}

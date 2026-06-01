@@ -3,24 +3,9 @@ import { motion, useInView } from 'framer-motion';
 import { FaEnvelope, FaLinkedin, FaFacebook, FaPaperPlane } from 'react-icons/fa';
 
 const contactItems = [
-  {
-    icon: <FaEnvelope />,
-    label: 'Email',
-    value: 'a.stojkov5@gmail.com',
-    href: 'mailto:a.stojkov5@gmail.com',
-  },
-  {
-    icon: <FaLinkedin />,
-    label: 'LinkedIn',
-    value: 'Aleksandar Stojkov',
-    href: 'https://www.linkedin.com/in/aleksandar-stojkov-b37ab0304/',
-  },
-  {
-    icon: <FaFacebook />,
-    label: 'Facebook',
-    value: 'Stojkov Aleksandar',
-    href: '#',
-  },
+  { icon: <FaEnvelope />,  label: 'Email',    value: 'a.stojkov5@gmail.com',      href: 'mailto:a.stojkov5@gmail.com' },
+  { icon: <FaLinkedin />,  label: 'LinkedIn', value: 'Aleksandar Stojkov',         href: 'https://www.linkedin.com/in/aleksandar-stojkov-b37ab0304/' },
+  { icon: <FaFacebook />,  label: 'Facebook', value: 'Stojkov Aleksandar',         href: '#' },
 ];
 
 const containerVariants = {
@@ -35,9 +20,9 @@ const itemVariants = {
 
 export default function Contact() {
   const headerRef = useRef(null);
-  const gridRef = useRef(null);
+  const gridRef   = useRef(null);
   const headerInView = useInView(headerRef, { once: true, amount: 0.3 });
-  const gridInView = useInView(gridRef, { once: true, amount: 0.1 });
+  const gridInView   = useInView(gridRef,   { once: true, amount: 0.1 });
 
   return (
     <section id="contact" className="section-wrapper">
@@ -48,9 +33,10 @@ export default function Contact() {
           animate={headerInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          <p className="section-label">Let&apos;s Connect</p>
-          <h2 className="section-title">Get In Touch</h2>
+          <p className="section-label">Secure Channel</p>
+          <h2 className="section-title">Make Contact</h2>
           <div className="glow-line" />
+         
         </motion.div>
 
         <motion.div
@@ -61,10 +47,10 @@ export default function Contact() {
           animate={gridInView ? 'visible' : 'hidden'}
         >
           <motion.div variants={itemVariants} className="contact-info-card">
-            <h3 className="contact-info-title">Let&apos;s work together</h3>
+            <h3 className="contact-info-title">Open to missions</h3>
             <p className="contact-info-subtitle">
-              I&apos;m available for freelance projects and full-time opportunities.
-              Feel free to reach out — I&apos;d love to hear from you!
+              Available for freelance projects and full-time opportunities.
+              Reach out through any channel — I respond swiftly.
             </p>
 
             {contactItems.map((item) => (
@@ -88,36 +74,15 @@ export default function Contact() {
             <form action="https://getform.io/f/bejjpwpa" method="POST">
               <div className="form-group">
                 <label className="form-label" htmlFor="name">Name</label>
-                <input
-                  id="name"
-                  type="text"
-                  name="name"
-                  placeholder="Your name"
-                  className="form-input"
-                  required
-                />
+                <input id="name" type="text" name="name" placeholder="Your name" className="form-input" required />
               </div>
               <div className="form-group">
                 <label className="form-label" htmlFor="email">Email</label>
-                <input
-                  id="email"
-                  type="email"
-                  name="email"
-                  placeholder="your@email.com"
-                  className="form-input"
-                  required
-                />
+                <input id="email" type="email" name="email" placeholder="your@email.com" className="form-input" required />
               </div>
               <div className="form-group">
                 <label className="form-label" htmlFor="message">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  placeholder="Your message..."
-                  className="form-textarea"
-                  rows={5}
-                  required
-                />
+                <textarea id="message" name="message" placeholder="Your message..." className="form-textarea" rows={5} required />
               </div>
               <motion.button
                 type="submit"

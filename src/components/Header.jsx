@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navItems = [
-  { label: 'Home', href: '#home' },
-  { label: 'Skills', href: '#skills' },
+  { label: 'Home',     href: '#home' },
+  { label: 'Skills',   href: '#skills' },
   { label: 'Projects', href: '#portfolio' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contact',  href: '#contact' },
 ];
 
 export default function Header() {
@@ -45,13 +45,20 @@ export default function Header() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 + i * 0.08, duration: 0.5 }}
               >
-                <a href={item.href} className="nav-link">
-                  {item.label}
-                </a>
+                <a href={item.href} className="nav-link">{item.label}</a>
               </motion.li>
             ))}
           </ul>
         </nav>
+
+        <motion.span
+          className="clan-tag"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+        >
+          うちは一族
+        </motion.span>
 
         <button
           className="hamburger"
