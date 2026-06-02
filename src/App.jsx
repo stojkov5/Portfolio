@@ -16,7 +16,7 @@ function App() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
-  /* ── Lenis smooth momentum scroll (GTA VI feel) ── */
+  
   useEffect(() => {
     const lenis = new Lenis({
       lerp: 0.09,
@@ -60,14 +60,14 @@ function App() {
       <Header />
       <Main />
       <Marquee
-        items={['Front-End Developer', 'React', 'Three.js', 'UI Engineer', 'Uchiha Clan']}
+        items={['Front-End Developer', 'React', 'Next.js', 'JavaScript', 'HTML & CSS', 'GitHub', 'Open Source']}
       />
       <Statement />
       <Skills />
       <Projects />
       <Marquee
         reverse
-        items={['Selected Work', 'Field Operations', 'Open to Missions', 'Let’s Build', 'Sharingan']}
+        items={['Selected Work', 'Field Operations', 'Open to Missions', 'Let’s Build', 'Contact Me']}
       />
       <Contact />
       <Footer />
